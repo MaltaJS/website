@@ -39,7 +39,7 @@ organizers =
 mainEvent = 
   [
     ExtendedSchedule
-      "18:45" "20:00"
+      "18:45" "19:45"
       "An introduction to Progressive Web Apps"
       "Kevin Farrugia"
       """
@@ -53,11 +53,11 @@ mainEvent =
 
 preEvents =
   [ Schedule "18:00" "18.30" "WELCOME COFFEE & REGISTRATION"
-  , Schedule "18.30" "19:45" "Welcome speech"
+  , Schedule "18.30" "18:45" "Welcome speech"
   ]
 
 postEvents =
-  [ Schedule "20:00" "21:00" "Networking" ]
+  [ Schedule "19:45" "21:00" "Networking" ]
 
 
 {-| Renders the HTML for the About section: what is MaltaJS 
