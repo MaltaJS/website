@@ -8,6 +8,8 @@ npm-debug.log*
 # this template is generated from elm
 source/templates/body-static.html
 
+public/
+
 # Runtime data
 pids
 *.pid

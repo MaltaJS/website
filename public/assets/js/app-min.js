@@ -10333,10 +10333,10 @@ var _user$project$Shared$ToggleNavigation = function (a) {
 	return {ctor: 'ToggleNavigation', _0: a};
 };
 
-var _user$project$Content$sponsorLogo = '/images/companies/igaming-cloud.svg';
+var _user$project$Content$sponsorLogo = '/images/companies/gig.jpg';
 var _user$project$Content$postEvents = {
 	ctor: '::',
-	_0: A3(_user$project$Shared$Schedule, '20:00', '21:00', 'Networking'),
+	_0: A3(_user$project$Shared$Schedule, '19:45', '21:00', 'Networking'),
 	_1: {ctor: '[]'}
 };
 var _user$project$Content$preEvents = {
@@ -10344,7 +10344,7 @@ var _user$project$Content$preEvents = {
 	_0: A3(_user$project$Shared$Schedule, '18:00', '18.30', 'WELCOME COFFEE & REGISTRATION'),
 	_1: {
 		ctor: '::',
-		_0: A3(_user$project$Shared$Schedule, '18.30', '19:45', 'Welcome speech'),
+		_0: A3(_user$project$Shared$Schedule, '18.30', '18:45', 'Welcome speech'),
 		_1: {ctor: '[]'}
 	}
 };
@@ -10353,7 +10353,7 @@ var _user$project$Content$mainEvent = {
 	_0: A6(
 		_user$project$Shared$ExtendedSchedule,
 		'18:45',
-		'20:00',
+		'19:45',
 		'An introduction to Progressive Web Apps',
 		'Kevin Farrugia',
 		'\n      PWAs are web-based applications, accessible and discoverable through your browser as any ordinary web app; but also with the ability to be installed to your mobile’s home screen and enable native-like behavior, including the ability to work offline, be viewed in fullscreen and receive push notifications.\n      ',
@@ -10405,7 +10405,7 @@ var _user$project$Content$markDownWithDefault = _evancz$elm_markdown$Markdown$to
 	});
 var _user$project$Content$aboutView = _user$project$Content$markDownWithDefault('\nMaltaJS is the new front-end community in Malta: born in 2016 as internal guild at Betsson,\nnow it is open to all the developers on the island.\n\nOur aim is to provide **a place to share knowledge and technologies**, through meetings and talks.\n\nDo you think you have a good idea for a talk, hackathon, demo or peer-learning?\n\n**Join us** [on Facebook](https://www.facebook.com/groups/941691142568690/) and be part of the community!\n  ');
 var _user$project$Content$formErrorView = _user$project$Content$markDownWithDefault('\nPlease fill in all the required field\n  ');
-var _user$project$Content$sponsor = _user$project$Content$markDownWithDefault('\n  ##iGaming Cloud\n\nWho are we? We are entrepreneurs, innovators, igaming enthusiasts with extensive industry experience.\n\nWe have created and developed iGC using experts in each area to bring together a lean iGaming Platform which we are proud to call iGaming Cloud.\n\n  ');
+var _user$project$Content$sponsor = _user$project$Content$markDownWithDefault('\n  ##Gaming Innovation Group\n\nGaming Innovation Group is a rapidly growing technology business. The Group offers cutting-edge Cloud based services and Performance Marketing through its 3 B2B products. Owns 7 B2C gambling products, offering games from the best-of-breed suppliers across the online sports betting and casino industry.\n\n  ');
 var _user$project$Content$defaultClassesWith = function (customClasses) {
 	return A2(
 		_elm_lang$core$String$join,
