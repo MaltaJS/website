@@ -1,0 +1,84 @@
+</div>
+<!-- EXTERNAL RESOURCES -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlkLWTphqTVHZ45YQYeatBHp2LoHi4tbA"></script>
+<script src="js/app-min.js"></script>
+<script>
+  
+    /** gmap **/
+    function myMap() {
+        var mapCanvas = document.getElementById("map");
+        if (!mapCanvas) {
+          return;
+        }
+
+        var defaultProps = JSON.parse(mapCanvas.dataset.coordinates);
+        var mapCenterLatLng = new google.maps.LatLng(defaultProps.mapCenterLat, defaultProps.mapCenterLng);
+
+        var mapOptions = {
+            center: mapCenterLatLng,
+            zoom: defaultProps.initialZoom,
+            scrollwheel: false,
+            navigationControl: false,
+            mapTypeControl: false,
+            scaleControl: false
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var image = {
+            url: '../../images/map_marker.png',
+            // This marker is 20 pixels wide by 32 pixels high.
+            size: new google.maps.Size(70, 70),
+            // The origin for this image is (0, 0).
+            origin: new google.maps.Point(0, 0),
+            // The anchor for this image is the base of the flagpole at (0, 32).
+            anchor: new google.maps.Point(12, 70)
+        };
+
+        var contentString = '<div id="content">'+
+            '<div id="location-details">'+
+                '</div>'+
+                '<h1 id="firstHeading" class="firstHeading"><b>Location Details:</b></h1>'+
+                '<div id="bodyContent">'+
+                    '<p>Microsoft Innovation Center</p>'+
+                    '</div>'+
+                '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        var marker = new google.maps.Marker({
+            position: mapCenterLatLng,
+            title: 'MaltaJS',
+            map: map,
+            draggable: false,
+            icon: image
+        });
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+
+    }
+
+	  var scroll = window.pageYOffset || document.body.scrollTop;
+    var mountNode = document.getElementById('main');
+
+    // look at http://stackoverflow.com/questions/39687776/how-to-render-embedded-elm-module-synchronously/
+    var mo = new MutationObserver(function(mutationRecords, instance) {
+        // a trivial check
+        for (var i = 0; i < mutationRecords.length; i += 1) {
+            if (mutationRecords[i].addedNodes.length > 0) {
+                myMap();
+                // stop observing, if not needed anymore
+                mo.disconnect();
+            }
+        }
+    });
+    mo.observe(mountNode, { childList: true });
+
+    var myApp = Elm.Main.embed(mountNode);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+body {
+  font-size: 14px;
+}
+
+body {
+  font-family: 'Open Sans';
+  line-height: 1.5em;
+}
+
+div {
+  font: inherit;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+b {
+  font-weight: 700!important;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.textCenter{
+  text-align: center;
+}
+
+.menu li {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  padding: 10px;
+}
+
+.header div,
+.header ul {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.github {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background: url(../../images/social_media.png) -46px -206px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.site {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background: url(../../images/social_media.png) -137px -386px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+
+.linkedin {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background: url(../../images/media.png) -2px -0px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.website {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background: url(../../images/media.png) -2px -21px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+section.row:not(.banner) {
+	border-top: 1px solid #f2f2f2;
+  margin-top: 35px;
+  padding-top: 45px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  color: #000000;
+  margin: 0 4rem;
+}
+
+h1, h2, h3, h4 {
+  color: #323232;
+}
+
+h1 {
+  font-weight: 700;
+  margin-top: 25px;
+  text-align: center;
+}
