@@ -11,6 +11,8 @@
 ```
 $ npm install
 
+$ elm-package install
+
 $ make all
 
 $ npm start
