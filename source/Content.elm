@@ -94,15 +94,13 @@ sponsor : Html a
 sponsor =
   markDownWithDefault
   """
-  ##iGaming Cloud
+  ##Gaming Innovation Group
 
-Who are we? We are entrepreneurs, innovators, igaming enthusiasts with extensive industry experience.
-
-We have created and developed iGC using experts in each area to bring together a lean iGaming Platform which we are proud to call iGaming Cloud.
+Gaming Innovation Group is a rapidly growing technology business. The Group offers cutting-edge Cloud based services and Performance Marketing through its 3 B2B products. Owns 7 B2C gambling products, offering games from the best-of-breed suppliers across the online sports betting and casino industry.
 
   """
 
 sponsorLogo =
-  "/images/companies/igaming-cloud.svg"
+  "/images/companies/gig.jpg"
 
 
