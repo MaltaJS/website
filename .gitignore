@@ -4,7 +4,6 @@ logs
 npm-debug.log*
 *.lock
 .DS_Store
-public/
 
 # this template is generated from elm
 source/templates/body-static.html
