@@ -20,6 +20,30 @@ $ npm start
 
 The app will be running on `localhost` at the port you specified (default is 3000).
 
+## Vagrant
+
+### Install
+
+* VirtualBox
+* Vagrant
+
+### Run the VM
+
+```
+$ vagrant up
+$ vagrant ssh
+```
+
+### Build and run
+
+```
+$ cd /vagrant
+$ yarn
+$ elm package install
+$ make all
+$ yarn start
+```
+
 ## Environment variables
 
 * **MONGODB_URI** is the address to a db instance in the standard MongoDB URI format
