@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "MaltaJS Elm app",
   "main": "index.js",
+  "engines": {
+    "node": "6.9.1"
+  },
   "dependencies": {
     "babelify": "^6.1.0",
     "body-parser": "~1.0.1",
