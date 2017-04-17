@@ -3,7 +3,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlkLWTphqTVHZ45YQYeatBHp2LoHi4tbA"></script>
 <script src="js/app-min.js"></script>
 <script>
-  
+
     /** gmap **/
     function myMap() {
         var mapCanvas = document.getElementById("map");
@@ -61,7 +61,6 @@
 
     }
 
-	  var scroll = window.pageYOffset || document.body.scrollTop;
     var mountNode = document.getElementById('main');
 
     // look at http://stackoverflow.com/questions/39687776/how-to-render-embedded-elm-module-synchronously/
@@ -78,7 +77,6 @@
     mo.observe(mountNode, { childList: true });
 
     var myApp = Elm.Main.embed(mountNode);
-
 </script>
 </body>
 </html>
