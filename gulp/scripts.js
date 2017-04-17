@@ -1,22 +1,19 @@
-var config = require("./config"),
+var config = require('./config'),
     gulp = require('gulp'),
-    elm  = require('gulp-elm'),
-    minify = require('gulp-minify');
-    exec = require('gulp-exec');
-
-// Elm tasks
-gulp.task('elm-init', elm.init);
-
-gulp.task('elm-bundle', ['elm-init'], function() {
-    console.log('Bundling the ELM!');
-    gulp.src(config.source.js)
-        .pipe(elm.bundle('app.js'))
-        .pipe(minify())
-        .pipe(gulp.dest(config.public.js));
-});
+    minify = require('gulp-minify'),
+    exec = require('gulp-exec'),
+    elmOut = config.public.js + '/app.js',
+    elmCmd =
+      'elm-make source/Main.elm --output ' + elmOut;
 
 gulp.task('elm', function() {
     gulp.src(config.source.js)
-        .pipe(exec('elm-make source/Main.elm --output public/dist/js/app.js'))
+        .pipe(exec(elmCmd))
+});
+
+gulp.task('elm-bundle', ['elm'], function() {
+    gulp.src(elmOut)
+        .pipe(minify())
+        .pipe(gulp.dest(config.public.js));
 });
 
