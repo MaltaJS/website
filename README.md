@@ -1,24 +1,5 @@
 # MaltaJS website
 
-## Requirements
-
- - NodeJs >= 4.3.2
- - Npm >= 3.1.0
- - MongoDB
-
-## Instructions
-
-```
-$ npm install
-
-$ elm-package install
-
-$ make all
-
-$ npm start
-```
-
-The app will be running on `localhost` at the port you specified (default is 3000).
 
 ## Vagrant
 
@@ -39,12 +20,16 @@ $ vagrant ssh
 ```
 $ cd /vagrant
 $ yarn
-$ elm package install
+$ elm package install -y
 $ make all
 $ yarn start
 ```
 
+The app will be running on `localhost` at the port you specified (default is 3000).
+
 ## Environment variables
+
+Not mandatory for development, used for deployment on Heroku.
 
 * **MONGODB_URI** is the address to a db instance in the standard MongoDB URI format
 * **AUTH_TOKEN** is the token to be used when retrieving the subscriber's list
