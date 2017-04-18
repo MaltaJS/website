@@ -9,6 +9,7 @@ npm-debug.log*
 source/templates/body-static.html
 
 www/
+.vagrant/
 
 # Runtime data
 pids

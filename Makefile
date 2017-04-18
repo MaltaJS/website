@@ -1,4 +1,5 @@
 elm:
+	gulp elm
 	gulp elm-bundle
 	node_modules/.bin/elm-static-html -c elm-static-html.json
 templates:

@@ -11,7 +11,7 @@ gulp.task('elm', function() {
         .pipe(exec(elmCmd))
 });
 
-gulp.task('elm-bundle', ['elm'], function() {
+gulp.task('elm-bundle', function() {
     gulp.src(elmOut)
         .pipe(minify())
         .pipe(gulp.dest(config.public.js));
