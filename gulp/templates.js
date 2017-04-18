@@ -13,7 +13,7 @@ gulp.task('html:app', function() {
   gulp
     .src(appTmpl)
     .pipe(concat('index.html'))
-    .pipe(gulp.dest('./public/'))
+    .pipe(gulp.dest(config.public.root))
 })
 
 gulp.task('html:static', function() {
@@ -21,5 +21,5 @@ gulp.task('html:static', function() {
   gulp
     .src(staticTmpl)
     .pipe(concat('static.html'))
-    .pipe(gulp.dest('./public/'))
+    .pipe(gulp.dest(config.public.root))
 })

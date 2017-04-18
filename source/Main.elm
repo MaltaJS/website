@@ -86,7 +86,7 @@ view model =
 
     , View.registrationForm model
 
-    , View.sponsor Content.sponsor
+    , View.sponsor
 
     , View.contacts Content.organizers
 
