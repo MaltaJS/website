@@ -71,11 +71,12 @@ Vagrant.configure("2") do |config|
      apt-get install -y curl
      curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
      apt-get install -y nodejs
-     apt-get install -y yarn
      apt-get install -y git
      npm install -g gulp
      npm install -g elm
+     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+     sudo apt-get update && sudo apt-get install yarn
      apt-get install -y mongodb
-		 
    SHELL
 end
