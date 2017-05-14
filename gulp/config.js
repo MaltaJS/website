@@ -1,7 +1,7 @@
 const sourceRoot = './source/',
-    distRoot = './public/assets/dist/',
-    assetsRoot = './public/assets/',
-    publicRoot = './public/',
+    distRoot = './www/assets/dist/',
+    assetsRoot = './www/assets/',
+    publicRoot = './www/',
     serverRoot = './server/',
     bootstrapRoot = './node_modules/bootstrap/';
 

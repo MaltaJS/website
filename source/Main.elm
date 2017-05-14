@@ -19,7 +19,7 @@ import Form
 main : Program Never Model Msg
 main = Html.program
   { init = init
-  , view = view
+  , view = simpleView
   , update = update
   , subscriptions = subscriptions
   }
@@ -56,8 +56,23 @@ update msg model =
         error = errorExtractor httpError
       in
           ( { model | error = error }, Cmd.none )
-    
-        
+
+
+simpleView : Model -> Html Msg
+simpleView model =
+  div [ id "container" ]
+    [ View.header model.showNavigation Nothing (\c -> ToggleNavigation (not c))
+
+    , View.banner
+
+    , View.about Content.aboutView
+
+    , View.contacts Content.organizers
+
+    , View.footer
+    ]
+
+
 view : Model -> Html Msg
 view model =
   div [ id "container" ]
@@ -71,7 +86,7 @@ view model =
 
     , View.registrationForm model
 
-    , View.sponsor Content.sponsor
+    , View.sponsor
 
     , View.secondSponsor Content.secondSponsor
 
