@@ -73,6 +73,8 @@ view model =
 
     , View.sponsor Content.sponsor
 
+    , View.secondSponsor Content.secondSponsor
+
     , View.contacts Content.organizers
 
     , View.map (View.Coordinates 15 35.8969459 14.4978039)

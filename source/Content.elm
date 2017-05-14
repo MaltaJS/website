@@ -40,14 +40,15 @@ mainEvent =
   [
     ExtendedSchedule
       "18:45" "19:45"
-      "An introduction to Progressive Web Apps"
-      "Kevin Farrugia"
+      "Web Browsers extensibility. Adding new functionality to web browsers"
+      "Martin Nechvátal"
       """
-      PWAs are web-based applications, accessible and discoverable through your browser as any ordinary web app; but also with the ability to be installed to your mobile’s home screen and enable native-like behavior, including the ability to work offline, be viewed in fullscreen and receive push notifications.
+      In my presentation I will be comparing different methods(plugins, extensions, bookmarklets) how developer can add more functionality to modern web browsers.
+      I will talk about limitations of each method, complexity and also historical similarities to other technologies, actual trends and possible development in future.
+      I will give basic information how to start developing new plugins, extension and bookmarklets for most used web browsers and differences in implementation bewteen them.
       """
-      [ ("linkedin", "https://mt.linkedin.com/in/https://www.linkedin.com/in/kevin-farrugia-69ba8881/")
-      , ("github", "https://github.com/kevinfarrugia")
-      , ("site", "https://www.incredible-web.com/")
+      [ ("linkedin", "https://www.linkedin.com/in/martinnechvatal/")
+      , ("github", "https://github.com/ArxSargos")
       ]
   ]
 
@@ -94,7 +95,7 @@ sponsor : Html a
 sponsor =
   markDownWithDefault
   """
-  ##Gaming Innovation Group
+  Gaming Innovation Group
 
 Gaming Innovation Group is a rapidly growing technology business. The Group offers cutting-edge Cloud based services and Performance Marketing through its 3 B2B products. Owns 7 B2C gambling products, offering games from the best-of-breed suppliers across the online sports betting and casino industry.
 
@@ -102,5 +103,21 @@ Gaming Innovation Group is a rapidly growing technology business. The Group offe
 
 sponsorLogo =
   "/images/companies/gig.jpg"
+
+secondSponsor : Html a
+secondSponsor =
+  markDownWithDefault
+  """
+  Evoke Gaming
+
+Evoke Gaming Ltd is based in Malta, and is a regulated online gaming company, we have been offering a thrilling and enjoyable online gaming experience to millions through brands that include Redbet.com, Whitebet.com, Bertil.com, Vinnarum.com and Mamamiabingo.com.
+
+The business remains true to its founding mission, to offer a fun and responsible gaming experience.
+
+  """
+
+secondSponsorLogo =
+  "/images/companies/evoke.png"
+
 
 
