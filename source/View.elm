@@ -9,6 +9,7 @@ module View exposing
   , map
   , registrationForm
   , sponsor
+  , secondSponsor
   )
 
 import Html exposing (Html, a, button, div, img, hr, h2, h3, h1, h5, h6, span, section, text, p)
@@ -58,6 +59,7 @@ header headerCollapsed active onNavigation  =
             , ("Schedule", "#schedule")
             , ("Subscribe", "#subscribe")
             , ("Sponsor", "#sponsor")
+            , ("SecondSponsor", "#secondSponsor")
             , ("Location", "#location")
             ]
     config : Header.Config msg
@@ -73,6 +75,17 @@ sponsor content =
       [ h1 [] [ text "Thanks to..." ] ]
     , div [ class sixColumns ]
       [ a [ href "https://igamingcloud.com/" ] [ img [ src sponsorLogo ] [] ] ]
+    , div [ class twelveColumns ]
+      [ content ]
+    ]
+
+secondSponsor : Html msg -> Html msg
+secondSponsor content =
+  section [ id "secondSponsor", class "row sponsor" ]
+    [ div [ class twelveColumns ]
+      [ h1 [] [ text "And to..." ] ]
+    , div [ class sixColumns ]
+      [ a [ href "http://www.evokegaming.com/" ] [ img [ src secondSponsorLogo ] [] ] ]
     , div [ class twelveColumns ]
       [ content ]
     ]
@@ -150,7 +163,7 @@ renderExtendedSchedule schedule =
       (
         [ div
         -- speaker's image
-          [ class "speakerImg", attribute "style" "background-image: url('/images/speakers/kevin-farrugia.jpg');" ]
+          [ class "speakerImg", attribute "style" "background-image: url('/images/speakers/martin-nechvatal.jpg');" ]
           []
         , h5 []
           [ span []

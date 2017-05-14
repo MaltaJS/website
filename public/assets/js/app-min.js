@@ -10333,10 +10333,11 @@ var _user$project$Shared$ToggleNavigation = function (a) {
 	return {ctor: 'ToggleNavigation', _0: a};
 };
 
-var _user$project$Content$sponsorLogo = '/images/companies/igaming-cloud.svg';
+var _user$project$Content$secondSponsorLogo = '/images/companies/evoke.png';
+var _user$project$Content$sponsorLogo = '/images/companies/gig.jpg';
 var _user$project$Content$postEvents = {
 	ctor: '::',
-	_0: A3(_user$project$Shared$Schedule, '20:00', '21:00', 'Networking'),
+	_0: A3(_user$project$Shared$Schedule, '19:45', '21:00', 'Networking'),
 	_1: {ctor: '[]'}
 };
 var _user$project$Content$preEvents = {
@@ -10344,7 +10345,7 @@ var _user$project$Content$preEvents = {
 	_0: A3(_user$project$Shared$Schedule, '18:00', '18.30', 'WELCOME COFFEE & REGISTRATION'),
 	_1: {
 		ctor: '::',
-		_0: A3(_user$project$Shared$Schedule, '18.30', '19:45', 'Welcome speech'),
+		_0: A3(_user$project$Shared$Schedule, '18.30', '18:45', 'Welcome speech'),
 		_1: {ctor: '[]'}
 	}
 };
@@ -10353,21 +10354,17 @@ var _user$project$Content$mainEvent = {
 	_0: A6(
 		_user$project$Shared$ExtendedSchedule,
 		'18:45',
-		'20:00',
-		'An introduction to Progressive Web Apps',
-		'Kevin Farrugia',
-		'\n      PWAs are web-based applications, accessible and discoverable through your browser as any ordinary web app; but also with the ability to be installed to your mobile’s home screen and enable native-like behavior, including the ability to work offline, be viewed in fullscreen and receive push notifications.\n      ',
+		'19:45',
+		'Web Browsers extensibility. Adding new functionality to web browsers',
+		'Martin Nechvátal',
+		'\n      In my presentation I will be comparing different methods(plugins, extensions, bookmarklets) how developer can add more functionality to modern web browsers.\n      I will talk about limitations of each method, complexity and also historical similarities to other technologies, actual trends and possible development in future.\n      I will give basic information how to start developing new plugins, extension and bookmarklets for most used web browsers and differences in implementation bewteen them.\n      ',
 		{
 			ctor: '::',
-			_0: {ctor: '_Tuple2', _0: 'linkedin', _1: 'https://mt.linkedin.com/in/https://www.linkedin.com/in/kevin-farrugia-69ba8881/'},
+			_0: {ctor: '_Tuple2', _0: 'linkedin', _1: 'https://www.linkedin.com/in/martinnechvatal/'},
 			_1: {
 				ctor: '::',
-				_0: {ctor: '_Tuple2', _0: 'github', _1: 'https://github.com/kevinfarrugia'},
-				_1: {
-					ctor: '::',
-					_0: {ctor: '_Tuple2', _0: 'site', _1: 'https://www.incredible-web.com/'},
-					_1: {ctor: '[]'}
-				}
+				_0: {ctor: '_Tuple2', _0: 'github', _1: 'https://github.com/ArxSargos'},
+				_1: {ctor: '[]'}
 			}
 		}),
 	_1: {ctor: '[]'}
@@ -10405,7 +10402,8 @@ var _user$project$Content$markDownWithDefault = _evancz$elm_markdown$Markdown$to
 	});
 var _user$project$Content$aboutView = _user$project$Content$markDownWithDefault('\nMaltaJS is the new front-end community in Malta: born in 2016 as internal guild at Betsson,\nnow it is open to all the developers on the island.\n\nOur aim is to provide **a place to share knowledge and technologies**, through meetings and talks.\n\nDo you think you have a good idea for a talk, hackathon, demo or peer-learning?\n\n**Join us** [on Facebook](https://www.facebook.com/groups/941691142568690/) and be part of the community!\n  ');
 var _user$project$Content$formErrorView = _user$project$Content$markDownWithDefault('\nPlease fill in all the required field\n  ');
-var _user$project$Content$sponsor = _user$project$Content$markDownWithDefault('\n  ##iGaming Cloud\n\nWho are we? We are entrepreneurs, innovators, igaming enthusiasts with extensive industry experience.\n\nWe have created and developed iGC using experts in each area to bring together a lean iGaming Platform which we are proud to call iGaming Cloud.\n\n  ');
+var _user$project$Content$sponsor = _user$project$Content$markDownWithDefault('\n  Gaming Innovation Group\n\nGaming Innovation Group is a rapidly growing technology business. The Group offers cutting-edge Cloud based services and Performance Marketing through its 3 B2B products. Owns 7 B2C gambling products, offering games from the best-of-breed suppliers across the online sports betting and casino industry.\n\n  ');
+var _user$project$Content$secondSponsor = _user$project$Content$markDownWithDefault('\n  Evoke Gaming\n\nEvoke Gaming Ltd is based in Malta, and is a regulated online gaming company, we have been offering a thrilling and enjoyable online gaming experience to millions through brands that include Redbet.com, Whitebet.com, Bertil.com, Vinnarum.com and Mamamiabingo.com.\n\nThe business remains true to its founding mission, to offer a fun and responsible gaming experience.\n\n  ');
 var _user$project$Content$defaultClassesWith = function (customClasses) {
 	return A2(
 		_elm_lang$core$String$join,
@@ -10836,7 +10834,7 @@ var _user$project$View$renderExtendedSchedule = function (schedule) {
 									_0: _elm_lang$html$Html_Attributes$class('speakerImg'),
 									_1: {
 										ctor: '::',
-										_0: A2(_elm_lang$html$Html_Attributes$attribute, 'style', 'background-image: url(\'/images/speakers/kevin-farrugia.jpg\');'),
+										_0: A2(_elm_lang$html$Html_Attributes$attribute, 'style', 'background-image: url(\'/images/speakers/martin-nechvatal.jpg\');'),
 										_1: {ctor: '[]'}
 									}
 								},
@@ -11170,8 +11168,12 @@ var _user$project$View$header = F3(
 							_0: {ctor: '_Tuple2', _0: 'Sponsor', _1: '#sponsor'},
 							_1: {
 								ctor: '::',
-								_0: {ctor: '_Tuple2', _0: 'Location', _1: '#location'},
-								_1: {ctor: '[]'}
+								_0: {ctor: '_Tuple2', _0: 'SecondSponsor', _1: '#secondSponsor'},
+								_1: {
+									ctor: '::',
+									_0: {ctor: '_Tuple2', _0: 'Location', _1: '#location'},
+									_1: {ctor: '[]'}
+								}
 							}
 						}
 					}
@@ -11391,6 +11393,90 @@ var _user$project$View$sponsor = function (content) {
 			}
 		});
 };
+var _user$project$View$secondSponsor = function (content) {
+	return A2(
+		_elm_lang$html$Html$section,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$id('secondSponsor'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('row sponsor'),
+				_1: {ctor: '[]'}
+			}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class(_user$project$View$twelveColumns),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$h1,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('And to...'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class(_user$project$View$sixColumns),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$a,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$href('http://www.evokegaming.com/'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$img,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$src(_user$project$Content$secondSponsorLogo),
+										_1: {ctor: '[]'}
+									},
+									{ctor: '[]'}),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class(_user$project$View$twelveColumns),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: content,
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
 var _user$project$View$about = function (content) {
 	return A2(
 		_elm_lang$html$Html$section,
@@ -11484,15 +11570,19 @@ var _user$project$Main$view = function (model) {
 								_0: _user$project$View$sponsor(_user$project$Content$sponsor),
 								_1: {
 									ctor: '::',
-									_0: _user$project$View$contacts(_user$project$Content$organizers),
+									_0: _user$project$View$secondSponsor(_user$project$Content$secondSponsor),
 									_1: {
 										ctor: '::',
-										_0: _user$project$View$map(
-											A3(_user$project$View$Coordinates, 15, 35.8969459, 14.4978039)),
+										_0: _user$project$View$contacts(_user$project$Content$organizers),
 										_1: {
 											ctor: '::',
-											_0: _user$project$View$footer,
-											_1: {ctor: '[]'}
+											_0: _user$project$View$map(
+												A3(_user$project$View$Coordinates, 15, 35.8969459, 14.4978039)),
+											_1: {
+												ctor: '::',
+												_0: _user$project$View$footer,
+												_1: {ctor: '[]'}
+											}
 										}
 									}
 								}
