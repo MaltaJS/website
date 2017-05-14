@@ -18,7 +18,7 @@ import Html.Events exposing (onClick)
 import Json.Encode as JSE
 
 import Shared exposing (..)
-import Content exposing (..)
+import Content
 import Header
 import Form
 
@@ -27,33 +27,38 @@ sixColumns = "col-xs-12 col-sm-10 col-md-6 col-lg-4"
 
 banner : Html msg
 banner =
-  section [ id "home", class "row banner" ]
-    [ h2 [] [ text "Malta JS" ]
-      , h3 [] [ text "Javascript community in Malta" ]
-      , p [] [ text "5th of APRIL | Royal Malta Yacht Club" ]
-    ]
+  let content = Content.banner
+  in
+    section [ id "home", class "row banner" ]
+      [ h2 [] [ text content.h2 ]
+      , h3 [] [ text content.h3 ]
+      , p [] [ text content.p ]
+      ]
 
 
 footer : Html msg
-footer = 
-  Html.footer [ class "footer" ]
-    [ div [ class twelveColumns ]
-      [ div [ class "leftSide" ]
-        [ p [] [ text "Copyright Ⓒ MaltaJs 2017 All Rights Reserved" ] ]
-      , div [ class "rightSide" ] []
+footer =
+  let content = Content.footer
+  in
+    Html.footer [ class "footer" ]
+      [ div [ class twelveColumns ]
+        [ div [ class "leftSide" ]
+          [ p [] [ text content.left.p ] ]
+        , div [ class "rightSide" ] []
+        ]
       ]
-    ]
 
 
 header : Bool -> Maybe Int -> (Bool -> msg) -> Html msg
 header headerCollapsed active onNavigation  =
   let
+    content = Content.navigation
     brand = Header.buildItem "MaltaJS" [ "brand" ]
     logo =
       Header.buildLogo
         (img [ src "images/logo.jpg" ] []) [ "header-logo" ]
     links =  --[]
-        List.map 
+        List.map
             (\(title, url) -> Header.buildActiveItem title url [])
             [ ("About", "#about")
             , ("Schedule", "#schedule")
@@ -68,16 +73,18 @@ header headerCollapsed active onNavigation  =
     Header.view config headerCollapsed active
 
 
-sponsor : Html msg -> Html msg
-sponsor content =
-  section [ id "sponsor", class "row sponsor" ]
-    [ div [ class twelveColumns ]
-      [ h1 [] [ text "Thanks to..." ] ]
-    , div [ class sixColumns ]
-      [ a [ href "https://igamingcloud.com/" ] [ img [ src sponsorLogo ] [] ] ]
-    , div [ class twelveColumns ]
-      [ content ]
-    ]
+sponsor : Html msg
+sponsor =
+  let content = Content.sponsor
+  in
+    section [ id "sponsor", class "row sponsor" ]
+      [ div [ class twelveColumns ]
+        [ h1 [] [ text "Thanks to..." ] ]
+      , div [ class sixColumns ]
+        [ a [ href content.website ] [ img [ src content.logoSrc ] [] ] ]
+      , div [ class twelveColumns ]
+        [ content.description ]
+      ]
 
 secondSponsor : Html msg -> Html msg
 secondSponsor content =
@@ -229,7 +236,7 @@ alert model =
   if (Form.isFormInvalid model.formModel) then
     div [ class "alert alert-danger small col-xs-12 col-sm-9" ]
       [ span [ class "glyphicon glyphicon-exclamation-sign" ] []
-      , formErrorView
+      , Content.formErrorView
       ]
   else if not((String.isEmpty model.error)) then
     div [ class "alert alert-danger small col-xs-12 col-sm-9" ]
@@ -240,7 +247,7 @@ alert model =
   else if (model.registered) then
     div [ class "alert alert-success small" ]
       [ span [ class "glyphicon glyphicon-info-sign" ] []
-      , p [] [ text "You're registered for the event!" ]  
+      , p [] [ text "You're registered for the event!" ]
       ]
   else
     Html.text ""
@@ -256,7 +263,7 @@ registrationForm model =
       , mapMsgToForm model
       , div [ class "col-xs-12 col-sm-12 col-md-12 col-lg-12 textCenter form-footer" ]
         [ alert model
-        , button 
+        , button
           [ onClick Register
           , class "btn btn-default register"
           , disabled disableForm

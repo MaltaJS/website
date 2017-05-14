@@ -1,7 +1,7 @@
 module Content exposing (..)
 
 {-| This module hosts the actual content of the page. Thus can be edited right here,
-    using Markdown. 
+    using Markdown.
 
 # Definition
 @docs Content
@@ -26,6 +26,35 @@ defaultClasses = String.join " " [ "col-xs-12" ]
 
 markDownWithDefault = Markdown.toHtml [ class defaultClasses ]
 
+navigation =
+  { links =
+    [ ("About") ]
+    -- Schedule, Subscribe, Sponsor, Location
+  }
+
+banner =
+  { h2 = "Malta JS"
+  , h3 = "Javascript community in Malta"
+  , p = "5th of APRIL | Royal Malta Yacht Club"
+  }
+
+footer =
+  { left =
+    { p = "Copyright Ⓒ MaltaJs 2017 All Rights Reserved" }
+  }
+
+sponsor =
+  { website = ""
+  , logoSrc = ""
+  , description =
+    markDownWithDefault
+      """
+      ##Gaming Innovation Group
+
+    Gaming Innovation Group is a rapidly growing technology business. The Group offers cutting-edge Cloud based services and Performance Marketing through its 3 B2B products. Owns 7 B2C gambling products, offering games from the best-of-breed suppliers across the online sports betting and casino industry.
+
+      """
+  }
 
 organizers : List Organizer
 organizers =
@@ -36,7 +65,7 @@ organizers =
   ]
 
 
-mainEvent = 
+mainEvent =
   [
     ExtendedSchedule
       "18:45" "19:45"
@@ -80,16 +109,17 @@ Do you think you have a good idea for a talk, hackathon, demo or peer-learning?
   """
 
 {-| Renders the HTML for the Venue section: where there will be the event
- 
+
     venueView
 -}
- 
+
 formErrorView : Html a
 formErrorView =
   markDownWithDefault
   """
 Please fill in all the required field
   """
+
 
 sponsor : Html a
 sponsor =
@@ -118,6 +148,3 @@ The business remains true to its founding mission, to offer a fun and responsibl
 
 secondSponsorLogo =
   "/images/companies/evoke.png"
-
-
-

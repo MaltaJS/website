@@ -1,8 +1,10 @@
-module.exports= function(app) {
+
+var AUTH_TOKEN = process.env.AUTH_TOKEN
+
+function appRoutes(app) {
     var model     = require('../models/schema');
     var nodemailer = require('../../node_modules/nodemailer');
     var sgTransport = require('../../node_modules/nodemailer-sendgrid-transport');
-    var AUTH_TOKEN = process.env.AUTH_TOKEN
 
     /**
      * Get subscribers list
@@ -78,7 +80,7 @@ module.exports= function(app) {
           text: '',
           html: 'This a message from: '+ req.body.name + '<br>' +
                 '<p>Phone no: ' + req.body.phone + '</p></br>' +
-                '<p>Message: ' + req.body.message + '</p>' 
+                '<p>Message: ' + req.body.message + '</p>'
         };
 
         client.sendMail(email, function(err, info){
@@ -92,3 +94,5 @@ module.exports= function(app) {
         });
     });
 };
+
+module.exports = appRoutes 
