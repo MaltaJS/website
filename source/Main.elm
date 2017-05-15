@@ -19,7 +19,7 @@ import Form
 main : Program Never Model Msg
 main = Html.program
   { init = init
-  , view = simpleView
+  , view = view
   , update = update
   , subscriptions = subscriptions
   }
@@ -87,8 +87,6 @@ view model =
     , View.registrationForm model
 
     , View.sponsor
-
-    , View.secondSponsor Content.secondSponsor
 
     , View.contacts Content.organizers
 

@@ -9,7 +9,6 @@ module View exposing
   , map
   , registrationForm
   , sponsor
-  , secondSponsor
   )
 
 import Html exposing (Html, a, button, div, img, hr, h2, h3, h1, h5, h6, span, section, text, p)
@@ -57,44 +56,33 @@ header headerCollapsed active onNavigation  =
     logo =
       Header.buildLogo
         (img [ src "images/logo.jpg" ] []) [ "header-logo" ]
-    links =  --[]
+    links =
         List.map
             (\(title, url) -> Header.buildActiveItem title url [])
-            [ ("About", "#about")
-            , ("Schedule", "#schedule")
-            , ("Subscribe", "#subscribe")
-            , ("Sponsors", "#sponsor")
-            , ("Location", "#location")
-            ]
+            (List.map (\l -> (l, "#"++l)) content.links)
     config : Header.Config msg
     config = Header.Config (Just logo) (Just brand) links (Just onNavigation)
   in
     Header.view config headerCollapsed active
 
 
+makeSponsor content =
+  div [ class "sponsor-block" ]
+  [ div []
+    [ a [ href content.website ] [ img [ src content.logoSrc, class "sponsors-logo" ] [] ] ]
+    , div [ class twelveColumns ] [ content.description ]
+  ]
+
+
 sponsor : Html msg
 sponsor =
-  let content = Content.sponsor
+  let
+    list = List.map makeSponsor Content.sponsors
+    children = [ h1 [] [ text "Thanks to..." ] ] ++ list
   in
     section [ id "sponsor", class "row sponsor" ]
-      [ div [ class twelveColumns ]
-        [ h1 [] [ text "Thanks to..." ] ]
-      , div [ class sixColumns ]
-        [ a [ href content.website ] [ img [ src content.logoSrc ] [] ] ]
-      , div [ class twelveColumns ]
-        [ content.description ]
-      ]
+    [ div [ class twelveColumns ] children ]
 
-secondSponsor : Html msg -> Html msg
-secondSponsor content =
-  section [ id "secondSponsor", class "row sponsor" ]
-    [ div [ class twelveColumns ]
-      [ h1 [] [ text "And to..." ] ]
-    , div [ class sixColumns ]
-      [ a [ href "http://www.evokegaming.com/" ] [ img [ src secondSponsorLogo ] [] ] ]
-    , div [ class twelveColumns ]
-      [ content ]
-    ]
 
 
 about : Html msg -> Html msg
@@ -105,6 +93,7 @@ about content =
     , div [ class twelveColumns ]
       [ content ]
     ]
+
 
 viewOrganizer : Organizer -> Html msg
 viewOrganizer organizer =

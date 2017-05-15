@@ -28,8 +28,7 @@ markDownWithDefault = Markdown.toHtml [ class defaultClasses ]
 
 navigation =
   { links =
-    [ ("About") ]
-    -- Schedule, Subscribe, Sponsor, Location
+    [ "about", "schedule", "subscribe", "sponsor", "location" ]
   }
 
 banner =
@@ -43,18 +42,32 @@ footer =
     { p = "Copyright Ⓒ MaltaJs 2017 All Rights Reserved" }
   }
 
-sponsor =
-  { website = ""
-  , logoSrc = ""
-  , description =
-    markDownWithDefault
-      """
-      ##Gaming Innovation Group
+sponsors =
+  [ { website = "https://www.gaminginnovationgroup.com/"
+    , logoSrc = "/images/companies/gig.jpg"
+    , description =
+      markDownWithDefault
+        """
+### Gaming Innovation Group
 
-    Gaming Innovation Group is a rapidly growing technology business. The Group offers cutting-edge Cloud based services and Performance Marketing through its 3 B2B products. Owns 7 B2C gambling products, offering games from the best-of-breed suppliers across the online sports betting and casino industry.
+Gaming Innovation Group is a rapidly growing technology business. The Group offers cutting-edge Cloud based services and Performance Marketing through its 3 B2B products. Owns 7 B2C gambling products, offering games from the best-of-breed suppliers across the online sports betting and casino industry.
 
-      """
-  }
+        """
+    }
+  , { website = "http://www.evokegaming.com/"
+    , logoSrc = "/images/companies/evoke.png"
+    , description =
+      markDownWithDefault
+        """
+### Evoke Gaming
+
+Evoke Gaming Ltd is based in Malta, and is a regulated online gaming company, we have been offering a thrilling and enjoyable online gaming experience to millions through brands that include Redbet.com, Whitebet.com, Bertil.com, Vinnarum.com and Mamamiabingo.com.
+
+The business remains true to its founding mission, to offer a fun and responsible gaming experience.
+
+        """
+    }
+  ]
 
 organizers : List Organizer
 organizers =
@@ -120,31 +133,3 @@ formErrorView =
 Please fill in all the required field
   """
 
-
-sponsor : Html a
-sponsor =
-  markDownWithDefault
-  """
-  Gaming Innovation Group
-
-Gaming Innovation Group is a rapidly growing technology business. The Group offers cutting-edge Cloud based services and Performance Marketing through its 3 B2B products. Owns 7 B2C gambling products, offering games from the best-of-breed suppliers across the online sports betting and casino industry.
-
-  """
-
-sponsorLogo =
-  "/images/companies/gig.jpg"
-
-secondSponsor : Html a
-secondSponsor =
-  markDownWithDefault
-  """
-  Evoke Gaming
-
-Evoke Gaming Ltd is based in Malta, and is a regulated online gaming company, we have been offering a thrilling and enjoyable online gaming experience to millions through brands that include Redbet.com, Whitebet.com, Bertil.com, Vinnarum.com and Mamamiabingo.com.
-
-The business remains true to its founding mission, to offer a fun and responsible gaming experience.
-
-  """
-
-secondSponsorLogo =
-  "/images/companies/evoke.png"
