@@ -34,7 +34,7 @@ navigation =
 banner =
   { h2 = "Malta JS"
   , h3 = "Javascript community in Malta"
-  , p = "5th of APRIL | Royal Malta Yacht Club"
+  , p = "24th of MAY | Royal Malta Yacht Club"
   }
 
 footer =
