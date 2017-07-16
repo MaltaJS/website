@@ -66,9 +66,9 @@ update msg model =
 
 
 simpleView : Model -> Html Msg
-simpleView model =
+simpleView { nextEvent, showNavigation } =
     div [ id "container" ]
-        [ View.header model.showNavigation Nothing (\c -> ToggleNavigation (not c))
+        [ View.header nextEvent showNavigation Nothing (\c -> ToggleNavigation (not c))
         , View.banner
         , View.about Content.aboutView
         , View.contacts Content.organizers
@@ -78,17 +78,29 @@ simpleView model =
 
 view : Model -> Html Msg
 view model =
-    div [ id "container" ]
-        [ View.header model.showNavigation Nothing (\c -> ToggleNavigation (not c))
-        , View.banner
-        , View.about Content.aboutView
-        , View.eventDescription Content.preEvents Content.mainEvent Content.postEvents
-        , View.registrationForm model
-        , View.sponsor
-        , View.contacts Content.organizers
-        , View.map (View.Coordinates 15 35.8969459 14.4978039)
-        , View.footer
-        ]
+    let
+        toggleNavigation c =
+            ToggleNavigation (not c)
+
+        eventView =
+            Maybe.map
+                (\e ->
+                    [ View.eventDescription Content.preEvents Content.mainEvent Content.postEvents
+                    , View.registrationForm model
+                    , View.map (View.Coordinates 15 35.8969459 14.4978039)
+                    ]
+                )
+                model.nextEvent
+                |> Maybe.withDefault []
+    in
+        div [ id "container" ]
+            [ View.header model.nextEvent model.showNavigation Nothing toggleNavigation
+            , View.banner
+            , View.about Content.aboutView
+            , View.sponsor model.sponsors
+            , View.contacts Content.organizers
+            , View.footer
+            ]
 
 
 subscriptions : Model -> Sub Msg

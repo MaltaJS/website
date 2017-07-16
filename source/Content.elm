@@ -18,6 +18,7 @@ using Markdown.
 import Html exposing (Html, h1, div, p, text)
 import Html.Attributes exposing (class)
 import Markdown
+import Maybe.Extra as Mx
 import String
 import Shared exposing (..)
 
@@ -37,16 +38,27 @@ markDownWithDefault =
     Markdown.toHtml [ class defaultClasses ]
 
 
-navigation =
-    { links =
-        [ "about", "schedule", "subscribe", "sponsor", "location" ]
-    }
+
+-- TODO: this list is holding a duplicated information (the presence or absence of a specific section) which is already known to the Main module.
+-- Using the Model
+
+
+navigation : Maybe Event -> List String
+navigation event =
+    let
+        eventData =
+            if Mx.isJust event then
+                [ "schedule", "subscribe", "location" ]
+            else
+                []
+    in
+        "about" :: (eventData ++ [ "sponsor" ])
 
 
 banner =
     { h2 = "Malta JS"
     , h3 = "Javascript community in Malta"
-    , p = "24th of MAY | Royal Malta Yacht Club"
+    , p = "talks - meetups - hackatons"
     }
 
 
@@ -56,23 +68,27 @@ footer =
     }
 
 
-sponsors =
-    [ { website = "https://www.gaminginnovationgroup.com/"
-      , logoSrc = "/images/companies/gig.jpg"
-      , description =
-            markDownWithDefault
-                """
+sponsors : List SponsorType -> List Sponsor
+sponsors whitelist =
+    List.filter (\sponsor -> List.member sponsor.id whitelist)
+        [ { id = GiG
+          , website = "https://www.gaminginnovationgroup.com/"
+          , logoSrc = "/images/companies/gig.jpg"
+          , description =
+                markDownWithDefault
+                    """
 ### Gaming Innovation Group
 
 Gaming Innovation Group is a rapidly growing technology business. The Group offers cutting-edge Cloud based services and Performance Marketing through its 3 B2B products. Owns 7 B2C gambling products, offering games from the best-of-breed suppliers across the online sports betting and casino industry.
 
         """
-      }
-    , { website = "http://www.evokegaming.com/"
-      , logoSrc = "/images/companies/evoke.png"
-      , description =
-            markDownWithDefault
-                """
+          }
+        , { id = Evoke
+          , website = "http://www.evokegaming.com/"
+          , logoSrc = "/images/companies/evoke.png"
+          , description =
+                markDownWithDefault
+                    """
 ### Evoke Gaming
 
 Evoke Gaming Ltd is based in Malta, and is a regulated online gaming company, we have been offering a thrilling and enjoyable online gaming experience to millions through brands that include Redbet.com, Whitebet.com, Bertil.com, Vinnarum.com and Mamamiabingo.com.
@@ -80,8 +96,8 @@ Evoke Gaming Ltd is based in Malta, and is a regulated online gaming company, we
 The business remains true to its founding mission, to offer a fun and responsible gaming experience.
 
         """
-      }
-    ]
+          }
+        ]
 
 
 organizers : List Organizer

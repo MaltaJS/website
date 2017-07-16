@@ -16,6 +16,8 @@ type alias Model =
     , registered : Bool
     , signed : Bool
     , showNavigation : Bool
+    , nextEvent : Maybe Event
+    , sponsors : List SponsorType
     }
 
 
@@ -26,7 +28,30 @@ initialModel =
     , registered = False
     , signed = False
     , showNavigation = True
+    , nextEvent = Nothing
+    , sponsors = [ GiG ]
     }
+
+
+type SponsorType
+    = GiG
+    | Evoke
+
+
+type alias Sponsor =
+    { description : Html Msg
+    , id : SponsorType
+    , logoSrc : String
+    , website : String
+    }
+
+
+
+-- TODO: just a string for now?
+
+
+type Event
+    = String
 
 
 

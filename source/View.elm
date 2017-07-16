@@ -58,12 +58,9 @@ footer =
             ]
 
 
-header : Bool -> Maybe Int -> (Bool -> msg) -> Html msg
-header headerCollapsed active onNavigation =
+header : Maybe Event -> Bool -> Maybe Int -> (Bool -> msg) -> Html msg
+header event headerCollapsed active onNavigation =
     let
-        content =
-            Content.navigation
-
         brand =
             Header.buildItem "MaltaJS" [ "brand" ]
 
@@ -75,7 +72,7 @@ header headerCollapsed active onNavigation =
         links =
             List.map
                 (\( title, url ) -> Header.buildActiveItem title url [])
-                (List.map (\l -> ( l, "#" ++ l )) content.links)
+                (List.map (\l -> ( l, "#" ++ l )) <| Content.navigation event)
 
         config : Header.Config msg
         config =
@@ -92,11 +89,11 @@ makeSponsor content =
         ]
 
 
-sponsor : Html msg
-sponsor =
+sponsor : List SponsorType -> Html Msg
+sponsor activeSponsors =
     let
         list =
-            List.map makeSponsor Content.sponsors
+            List.map makeSponsor <| Content.sponsors activeSponsors
 
         children =
             [ h1 [] [ text "Thanks to..." ] ] ++ list
