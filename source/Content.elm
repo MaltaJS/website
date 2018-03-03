@@ -97,6 +97,18 @@ The business remains true to its founding mission, to offer a fun and responsibl
 
         """
           }
+        , { id = Knipster
+          , website = "https://meet.knipster.com/"
+          , logoSrc = "/images/companies/knipster-logo.svg"
+          , description =
+                markDownWithDefault
+                    """
+### Knipster
+
+Knipster Ltd is based in Malta.
+
+        """
+          }
         ]
 
 
@@ -109,21 +121,8 @@ organizers =
     ]
 
 
-mainEvent =
-    [ ExtendedSchedule
-        "18:45"
-        "19:45"
-        "Web Browsers extensibility. Adding new functionality to web browsers"
-        "Martin Nechvátal"
-        """
-      In my presentation I will be comparing different methods(plugins, extensions, bookmarklets) how developer can add more functionality to modern web browsers.
-      I will talk about limitations of each method, complexity and also historical similarities to other technologies, actual trends and possible development in future.
-      I will give basic information how to start developing new plugins, extension and bookmarklets for most used web browsers and differences in implementation bewteen them.
-      """
-        [ ( "linkedin", "https://www.linkedin.com/in/martinnechvatal/" )
-        , ( "github", "https://github.com/ArxSargos" )
-        ]
-    ]
+mainEvent event =
+    [ ExtendedSchedule "18:45" "19:45" event ]
 
 
 preEvents =

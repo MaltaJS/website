@@ -168,32 +168,36 @@ timeSpan start end =
 
 
 renderExtendedSchedule : ExtendedSchedule -> Html msg
-renderExtendedSchedule schedule =
-    div [ class "row scheduleRow" ]
-        [ div [ class "col-xs-12 col-sm-12 col-md-12 col-lg-12 eventTitle" ]
-            [ timeSpan schedule.start schedule.end
-            , div [ class "col-xs-8 col-sm-10 col-md-10 col-lg-10 eventLine" ]
-                [ hr [] [] ]
-            ]
-        , div [ class "col-xs-12 col-sm-9 col-md-9 col-lg-9 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 eventSpeaker" ]
-            ([ div
-                -- speaker's image
-                [ class "speakerImg", attribute "style" "background-image: url('/images/speakers/martin-nechvatal.jpg');" ]
-                []
-             , h5 []
-                [ span []
-                    [ text schedule.title ]
-                , span [ class "compute" ]
-                    [ text " with " ]
-                , span []
-                    [ text schedule.name ]
+renderExtendedSchedule { start, end, event } =
+    let
+        avatar =
+            "background-image: url('/images/speakers/" ++ event.speakerPicture ++ "');"
+    in
+        div [ class "row scheduleRow" ]
+            [ div [ class "col-xs-12 col-sm-12 col-md-12 col-lg-12 eventTitle" ]
+                [ timeSpan start end
+                , div [ class "col-xs-8 col-sm-10 col-md-10 col-lg-10 eventLine" ]
+                    [ hr [] [] ]
                 ]
-             , p []
-                [ text schedule.description ]
-             ]
-                ++ (List.map (\( c, l ) -> a [ class c, href l ] []) schedule.links)
-            )
-        ]
+            , div [ class "col-xs-12 col-sm-9 col-md-9 col-lg-9 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 eventSpeaker" ]
+                ([ div
+                    -- speaker's image
+                    [ class "speakerImg", attribute "style" avatar ]
+                    []
+                 , h5 []
+                    [ span []
+                        [ text event.title ]
+                    , span [ class "compute" ]
+                        [ text " with " ]
+                    , span []
+                        [ text event.speaker ]
+                    ]
+                 , p []
+                    [ text event.description ]
+                 ]
+                    ++ (List.map (\( c, l ) -> a [ class c, href l ] []) event.links)
+                )
+            ]
 
 
 eventDescription : List Schedule -> List ExtendedSchedule -> List Schedule -> Html msg
