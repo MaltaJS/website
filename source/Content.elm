@@ -55,11 +55,19 @@ navigation event =
         "about" :: (eventData ++ [ "sponsor" ])
 
 
-banner =
-    { h2 = "Malta JS"
-    , h3 = "Javascript community in Malta"
-    , p = "talks - meetups - hackatons"
-    }
+banner nextEvent =
+    case nextEvent of
+        Just { title, dateTime } ->
+            { h2 = "Malta JS"
+            , h3 = title
+            , p = dateTime
+            }
+
+        Nothing ->
+            { h2 = "Malta JS"
+            , h3 = "Javascript community in Malta"
+            , p = "talks - meetups - hackatons"
+            }
 
 
 footer =
@@ -103,7 +111,7 @@ The business remains true to its founding mission, to offer a fun and responsibl
           , description =
                 markDownWithDefault
                     """
-Knipster is a fantasy sports platform with a mobile-first approach. We provide a smartphone application which enables users to play against their friends and other football fans, for money or fun. As of now, the platform and application are under development and are planned to be launched as a free of charge application accessible through iOS and Android smartphones at the beginning of the second quarter of 2018.
+Knipster is a local fantasy football startup with a mobile-first approach. Our 10-strong team is based in Sliema and develops our app for iOS and Android using top-notch technologies like React Native and Elm. Closed beta will launch in March - let us know if you want to take part!
 
         """
           }

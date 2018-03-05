@@ -69,7 +69,7 @@ simpleView : Model -> Html Msg
 simpleView { nextEvent, showNavigation } =
     div [ id "container" ]
         [ View.header nextEvent showNavigation Nothing (\c -> ToggleNavigation (not c))
-        , View.banner
+        , View.banner nextEvent
         , View.about Content.aboutView
         , View.contacts Content.organizers
         , View.footer
@@ -97,7 +97,7 @@ view model =
                 |> Maybe.withDefault []
     in
         [ View.header model.nextEvent model.showNavigation Nothing toggleNavigation
-        , View.banner
+        , View.banner model.nextEvent
         ]
             ++ eventView
             ++ [ View.about Content.aboutView
