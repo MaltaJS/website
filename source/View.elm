@@ -30,11 +30,11 @@ sixColumns =
     "col-xs-12 col-sm-10 col-md-6 col-lg-4"
 
 
-banner : Html msg
-banner =
+banner : Maybe Event -> Html msg
+banner nextEvent =
     let
         content =
-            Content.banner
+            Content.banner nextEvent
     in
         section [ id "home", class "row banner" ]
             [ h2 [] [ text content.h2 ]

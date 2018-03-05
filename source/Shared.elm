@@ -31,6 +31,7 @@ initialModel =
     , nextEvent =
         Just
             { title = "A-Frame - Building virtual reality experiences in the browser"
+            , dateTime = "Wednesday 14th March 2018 @ Royal Yacht Club Malta"
             , description =
                 """
               A-Frame is a framework for developing 3D and virtual reality applications. It builds on top of the native functionality provided by web components to enable developers to create virtual worlds using markup. In this presentation we'll get hands-on with it and explain concepts like scene graphs as well as the entity component mechanism that comes bundled with the framework.
@@ -70,6 +71,7 @@ type alias Sponsor =
 
 type alias Event =
     { title : String
+    , dateTime : String
     , description : String
     , speaker : String
     , speakerDescription : String
