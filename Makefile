@@ -14,5 +14,6 @@ copy:
 	gulp copy
 	# can't use gulp properly, I'm sorry
 	cp -r source/images www/assets
-all: clean elm templates styles copy
+all:
+	make clean && make elm && make templates && make styles && make copy
 

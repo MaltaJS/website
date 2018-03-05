@@ -85,7 +85,10 @@ view model =
         eventView =
             Maybe.map
                 (\e ->
-                    [ View.eventDescription Content.preEvents Content.mainEvent Content.postEvents
+                    [ View.eventDescription
+                        Content.preEvents
+                        (Content.mainEvent e)
+                        Content.postEvents
                     , View.registrationForm model
                     , View.map (View.Coordinates 15 35.8969459 14.4978039)
                     ]
@@ -93,14 +96,16 @@ view model =
                 model.nextEvent
                 |> Maybe.withDefault []
     in
-        div [ id "container" ]
-            [ View.header model.nextEvent model.showNavigation Nothing toggleNavigation
-            , View.banner
-            , View.about Content.aboutView
-            , View.sponsor model.sponsors
-            , View.contacts Content.organizers
-            , View.footer
-            ]
+        [ View.header model.nextEvent model.showNavigation Nothing toggleNavigation
+        , View.banner
+        ]
+            ++ eventView
+            ++ [ View.about Content.aboutView
+               , View.sponsor model.sponsors
+               , View.contacts Content.organizers
+               , View.footer
+               ]
+            |> div [ id "container" ]
 
 
 subscriptions : Model -> Sub Msg

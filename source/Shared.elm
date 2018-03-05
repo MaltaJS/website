@@ -28,14 +28,32 @@ initialModel =
     , registered = False
     , signed = False
     , showNavigation = True
-    , nextEvent = Nothing
-    , sponsors = [ GiG ]
+    , nextEvent =
+        Just
+            { title = "A-Frame - Building virtual reality experiences in the browser"
+            , description =
+                """
+              A-Frame is a framework for developing 3D and virtual reality applications. It builds on top of the native functionality provided by web components to enable developers to create virtual worlds using markup. In this presentation we'll get hands-on with it and explain concepts like scene graphs as well as the entity component mechanism that comes bundled with the framework.
+              """
+            , speaker = "Yannis Gravezas"
+            , speakerPicture = "yannis_gravezas.jpg"
+            , speakerDescription =
+                """
+        Yannis has been working in visual programming for over a decade in sectors ranging from 3d printing and medical rehabilitation to digital agencies and, lately,  iGaming. Being passionate about creative coding, he contributes frequently to major open source projects like A-Frame and Three.js. Currently working at Play'N'GO, he makes sure that the company's games look and perform great.
+        """
+            , links =
+                [ ( "linkedin", "https://www.linkedin.com/in/wizgrav/" )
+                , ( "github", "https://github.com/wizgrav" )
+                ]
+            }
+    , sponsors = [ Knipster ]
     }
 
 
 type SponsorType
     = GiG
     | Evoke
+    | Knipster
 
 
 type alias Sponsor =
@@ -50,8 +68,14 @@ type alias Sponsor =
 -- TODO: just a string for now?
 
 
-type Event
-    = String
+type alias Event =
+    { title : String
+    , description : String
+    , speaker : String
+    , speakerDescription : String
+    , speakerPicture : String
+    , links : List ( String, String )
+    }
 
 
 
@@ -90,8 +114,5 @@ type alias Schedule =
 type alias ExtendedSchedule =
     { start : String
     , end : String
-    , title : String
-    , name : String
-    , description : String
-    , links : List ( String, String )
+    , event : Event
     }
