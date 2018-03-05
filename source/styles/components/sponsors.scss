@@ -48,8 +48,9 @@
 
 .sponsors-logo {
   margin-top: 60px;
-  max-width: 640px;
-  min-width: 640px;
+  max-width: initial;
+  min-width: initial;
+  width: "100%";
   p {
     font-size: 20px;
     font-weight: 700;

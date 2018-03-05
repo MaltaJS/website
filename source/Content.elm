@@ -103,9 +103,7 @@ The business remains true to its founding mission, to offer a fun and responsibl
           , description =
                 markDownWithDefault
                     """
-### Knipster
-
-Knipster Ltd is based in Malta.
+Knipster is a fantasy sports platform with a mobile-first approach. We provide a smartphone application which enables users to play against their friends and other football fans, for money or fun. As of now, the platform and application are under development and are planned to be launched as a free of charge application accessible through iOS and Android smartphones at the beginning of the second quarter of 2018.
 
         """
           }
@@ -126,13 +124,11 @@ mainEvent event =
 
 
 preEvents =
-    [ Schedule "18:00" "18.30" "WELCOME COFFEE & REGISTRATION"
-    , Schedule "18.30" "18:45" "Welcome speech"
-    ]
+    [ Schedule "18:00" "18.30" "Welcome and registration" ]
 
 
 postEvents =
-    [ Schedule "19:45" "21:00" "Networking" ]
+    [ Schedule "19:30" "21:00" "Networking" ]
 
 
 {-| Renders the HTML for the About section: what is MaltaJS
@@ -144,14 +140,13 @@ aboutView : Html a
 aboutView =
     markDownWithDefault
         """
-MaltaJS is the new front-end community in Malta: born in 2016 as internal guild at Betsson,
-now it is open to all the developers on the island.
+MaltaJS is the Javascript community in Malta: born in 2016, it is open to all the developers on the island.
 
 Our aim is to provide **a place to share knowledge and technologies**, through meetings and talks.
 
 Do you think you have a good idea for a talk, hackathon, demo or peer-learning?
 
-**Join us** [on Facebook](https://www.facebook.com/groups/941691142568690/) and be part of the community!
+**Join us** [on Facebook](https://www.facebook.com/groups/941691142568690/), [Meetup](https://www.meetup.com/maltajs/), and [Github](https://github.com/MaltaJS), and be part of the community!
   """
 
 

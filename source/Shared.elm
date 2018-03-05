@@ -36,7 +36,7 @@ initialModel =
               A-Frame is a framework for developing 3D and virtual reality applications. It builds on top of the native functionality provided by web components to enable developers to create virtual worlds using markup. In this presentation we'll get hands-on with it and explain concepts like scene graphs as well as the entity component mechanism that comes bundled with the framework.
               """
             , speaker = "Yannis Gravezas"
-            , speakerPicture = "yannis-gravezas.jpg"
+            , speakerPicture = "yannis_gravezas.jpg"
             , speakerDescription =
                 """
         Yannis has been working in visual programming for over a decade in sectors ranging from 3d printing and medical rehabilitation to digital agencies and, lately,  iGaming. Being passionate about creative coding, he contributes frequently to major open source projects like A-Frame and Three.js. Currently working at Play'N'GO, he makes sure that the company's games look and perform great.
@@ -46,7 +46,7 @@ initialModel =
                 , ( "github", "https://github.com/wizgrav" )
                 ]
             }
-    , sponsors = [ GiG, Knipster ]
+    , sponsors = [ Knipster ]
     }
 
 
